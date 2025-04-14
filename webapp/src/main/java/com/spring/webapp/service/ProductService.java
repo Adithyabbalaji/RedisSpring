@@ -7,6 +7,8 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
     @Autowired
@@ -20,5 +22,9 @@ public class ProductService {
     @CachePut(value = "product", key = "#product.id")
     public Product update(Product product) {
         return productRepository.save(product);
+    }
+
+    public List<Product> getProducts(){
+        return productRepository.findAll();
     }
 }

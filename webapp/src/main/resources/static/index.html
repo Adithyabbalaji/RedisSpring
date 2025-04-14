@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="page-title">Product Management System</h1>
+
+    <div class="grid-layout">
+        <!-- Product Form -->
+        <div class="form-container">
+            <h2 class="section-title">Add New Product</h2>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-id">Product ID</label>
+                    <input type="text" id="product-id" placeholder="Enter product ID" required>
+                    <p class="error-message" id="id-error"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Enter product name" required>
+                    <p class="error-message" id="name-error"></p>
+                </div>
+
+                <button type="submit" class="btn-submit">Add Product</button>
+            </form>
+        </div>
+
+        <!-- Product List -->
+        <div class="list-container">
+            <h2 class="section-title">Product List</h2>
+            <div id="loading" class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <div id="empty-message" class="empty-message" style="display: none;">
+                No products added yet. Add your first product above.
+            </div>
+            <table id="product-table" style="display: none;">
+                <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody id="product-list">
+                <!-- Products will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
